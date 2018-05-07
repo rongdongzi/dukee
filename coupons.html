@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src='js/rem.js'></script>
+    <title>绑定手机</title>
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou"></a>
+            <span>到店领券</span>
+        </header>
+        <div class="w-content1">
+            <h4 class="w-lq-title8">关闭时,计数器会重新计算</h4>
+            <div class="w-lq-item8">
+                <p>旗下店铺B店
+                </p>
+                <p class="mui-clearfix">
+                    <span class="mui-pull-left">当前: <a class="w-open8">营业中</a></span>
+                    <span class="mui-pull-right w-p-num8">领券人数 259</span>
+                </p>
+
+                <div class="mui-switch mui-switch-mini mui-active w-lq-switch8">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </div>
+            <div class="w-lq-item8">
+                <p>旗下店铺A店
+                </p>
+                <p class="mui-clearfix">
+                    <span class="mui-pull-left">当前: <a class="w-close8">歇业中</a></span>
+                    <span class="mui-pull-right w-p-num8 w-hide8">领券人数 259</span>
+                </p>
+
+                <div class="mui-switch mui-switch-mini w-lq-switch8">
+                    <div class="mui-switch-handle"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./mui/js/mui.min.js"></script>
+    <script src="./js/zepto.min.js"></script>
+    <script>
+        $(function() {
+            $(".mui-switch").each(function(i, item) {
+                item.addEventListener("toggle", function(event) {
+                    if (event.detail.isActive) {
+                        $(this).siblings().find(".w-p-num8").show()
+                        $(this).siblings().find("a").removeClass().addClass('w-open8').html('营业中')
+                    } else {
+                        $(this).siblings().find(".w-p-num8").hide()
+                        $(this).siblings().find("a").removeClass().addClass('w-close8').html('歇业中')
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+
+</html>

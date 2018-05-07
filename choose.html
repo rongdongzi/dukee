@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择类型(最多两项)</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem1.js"></script>
+    <script src="js/swiper-3.2.5.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="header_cash">
+        <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou1"></a>
+        <h3>选择类型(最多两项)</h3>
+    </div>
+
+    <div class="box">
+        <div class="list" id="sidebar">
+            <ul>
+                <li class="active"><a href="javascript:;">餐馆</a></li>
+                <li><a href="javascript:;">休闲</a></li>
+                <li><a href="javascript:;">娱乐</a></li>
+                <li><a href="javascript:;">健身</a></li>
+                <li><a href="javascript:;">亲子</a></li>
+                <li><a href="javascript:;">美容美发</a></li>                
+            </ul>
+        </div>
+
+        <div class="item_txt">
+            <section class="menu-right padding-all j-content">
+                <ul>
+                    <li><a href="javascript:;">KTV</a></li>
+                    <li class="active"><a href="javascript:;">影院</a></li>
+                    <li><a href="javascript:;">桌球</a></li>
+                    <li><a href="javascript:;">网吧</a></li>
+                    <li><a href="javascript:;">电玩</a></li>
+                    <li></li>                    
+                </ul>
+            </section>
+            
+            <section class="menu-right padding-all j-content">
+                <ul>
+                    <li><a href="javascript:;">KTV</a></li>
+                    <li><a href="javascript:;">影院</a></li>
+                    <li><a href="javascript:;">桌球</a></li>
+                    <li><a href="javascript:;">网吧</a></li>
+                    <li><a href="javascript:;">电玩1</a></li>
+                    <li><a href="javascript:;"> </a></li>                                                          
+                </ul>
+            </section>
+        </div>
+        
+    </div>
+
+    <div class="button_choose">
+            <button type="button" class="mui-btn mui-btn-danger">完成</button>
+        </div>
+</body>
+<script type="text/javascript">
+	$(function($){
+		$('#sidebar ul li').click(function(){
+			$(this).addClass('active').siblings('li').removeClass('active');
+			var index = $(this).index();
+			$('.j-content').eq(index).show().siblings('.j-content').hide();
+		})
+        $('.j-content ul li').click(function(){
+            $(this).addClass('active').siblings('li').removeClass('active');
+        })
+	})
+</script>
+</html>

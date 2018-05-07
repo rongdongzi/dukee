@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="js/rem.js"></script>
+    <title>店铺信息</title>
+    <style lang="">
+        .mui-table-view {
+            border-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            /* margin-top: 0.5rem; */
+        }
+        
+        .mui-table-view:before,
+        .mui-table-view:after {
+            height: 0;
+        }
+        
+        .mui-badge {
+            background-color: #fff;
+            border-radius: 0;
+            color: #808080;
+            font-size: 14px;
+        }
+        
+        .mui-navigate-right:after,
+        .mui-push-left:after,
+        .mui-push-right:after {
+            color: #808080;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .mui-table-view-cell:nth-child(8) p {
+            margin-top: 1rem;
+            text-indent: 2rem;
+            font-size: 14px;
+            line-height: 2rem;
+            letter-spacing: 0.1rem;
+            padding-right: 1.5rem;
+            position: relative;
+            color: #808080;
+        }
+        
+        .mui-table-view-cell:after {
+            left: 0;
+        }
+        
+        .icon-youjiantou {
+            position: absolute;
+            right: 1.5rem;
+            top: 3.4rem;
+            color: #666666;
+            font-size: 14px;
+            width: 1.5rem;
+        }
+        
+        .mui-table-view-cell span,
+        .mui-table-view-cell a {
+            font-size: 14px;
+        }
+        
+        .mui-table-view-cell span:last-child {
+            color: #808080;
+        }
+        
+        input[type="text"] {
+            border: 0;
+            color: #808080;
+            font-size: 14px;
+            text-align: right;
+            width: 80%;
+            margin-bottom: 0;
+            padding: 11px 15px;
+            height: 0;
+        }
+        
+        .mui-table-view {
+            border-bottom: 2px solid #DDDCDC;
+            /* padding-bottom: 2rem; */
+        }
+        
+        input[type='file'] {
+            position: absolute;
+            overflow: hidden;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class='iconfont icon-zuojiantou'></a>
+            <span>旗下店铺A</span>
+        </header>
+        <div class='w-content'>
+            <h4 class="w-sf-title18">待提交</h4>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell ">
+                    <span class='mui-pull-left'>店名</span>
+                    <input type="text" class='mui-pull-right' value="旗下店铺A店">
+                </li>
+                <li class="mui-table-view-cell">
+
+                    <a href="#classify" class="mui-navigate-right">
+                        <span class="mui-badge mui-badge-danger w-value18">餐馆,咖啡馆</span>类型
+                    </a>
+
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <span id="site" class="mui-badge mui-badge-danger">湖北省 武汉市 江汉区</span>地区
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <span class='mui-pull-left'>店址</span>
+                    <input type="text" class='mui-pull-right' value="泛海国际SOHO城1栋1301">
+                </li>
+                <li class="mui-table-view-cell">
+                    <span class='mui-pull-left'>电话</span>
+                    <input type="text" class='mui-pull-right' value="027-82385967">
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="busTimeSet.html" class="mui-navigate-right">
+                        <span class="mui-badge mui-badge-danger">一 二 三 四 五 　9:30-21:30</span>营业时间
+                    </a>
+                </li>
+                <li class="mui-table-view-cell ">
+                    <span class='mui-pull-left'>标语</span>
+                    <input type="text" class='mui-pull-right' value="吃完再也不会牙痛">
+                </li>
+                <li class="mui-table-view-cell">
+                    <span>品牌介绍</span>
+                    <p>
+                        2011年正式推出时尚咖啡品牌屋(1月5日北京漫咖啡第一家丽都店正式营业). 创始人辛会长,希望漫咖啡成为"现代化城市舒适的休息空间创作"人们能够在这儿享受一天中浪漫的时光.
+
+                        <a href="shopDesSet.html" class="iconfont icon-youjiantou"></a>
+                    </p>
+
+                </li>
+                <li class="mui-table-view-cell">
+                    <span class="mui-pull-left">地理位置</span>
+                    <span class="mui-pull-right">(已设置)<a  href="mapPos.html" class="iconfont icon-zuobiao"></a></span>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <span class="mui-badge mui-badge-danger">2959</span>推荐码(可选)
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <span class="mui-pull-left w-pic-type18">营业执照</span>
+                    <span class="mui-pull-right upload-pic">
+                    <i class="iconfont icon-xiangji1"></i>
+                    <a href="#" class="">
+                        点击添加
+                            <input type="file" value="点击添加" id="busPic" onchange="getFileContent(busPic,img1);"> 
+                    </a>
+                   
+                </span>
+                    <div class='img1'></div>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <span class="mui-pull-left w-pic-type18">LOGO(可选)</span>
+                    <span class="mui-pull-right upload-pic">
+                        <i class="iconfont icon-xiangji1"></i>
+                        <a href="#" class="">
+                            点击添加
+                                <input type="file" value="点击添加" id="logoPic" onchange="getFileContent(logoPic,img2);"> 
+                        </a>
+                    </span>
+                    <div class='img2'></div>
+                </li>
+
+                <li class="mui-table-view-cell">
+                    <span class="mui-pull-left w-pic-type18">门店照(至少一张)</span>
+                    <span class="mui-pull-right upload-pic">
+                            <i class="iconfont icon-xiangji1"></i>
+                            <a href="#" class="">
+                                点击添加
+                                <input type="file" value="点击添加"  id='shopPic' onchange='getFileContent(shopPic,img3);'> 
+                            </a>
+                           
+                        </span>
+                    <div class='img3'></div>
+
+                </li>
+
+            </ul>
+            <div class="w-submit18"><a href="#">完成</a></div>
+            <!-- 选择类型弹框 -->
+            <div id="classify" class="mui-popover mui-popover-action mui-popover-bottom w-classify18">
+                <ul class="mui-table-view">
+                    <i class="mui-icon mui-icon-closeempty"></i>
+                    <div class="title">选型分类(最多两项)</div>
+                    <li class="mui-pull-left ">
+                        <span>餐饮</span>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">餐馆</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">咖啡馆</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">甜品店</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">茶馆</a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view">
+                    <li class="mui-pull-left ">
+                        <span>休闲</span>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">足疗</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">足浴</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">按摩</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">汗蒸</a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view">
+                    <li class="mui-pull-left ">
+                        <span>娱乐</span>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">KTV</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">影院</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">桌球</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">网吧</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">电玩</a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view">
+                    <li class="mui-pull-left ">
+                        <span>健身</span>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">健身馆</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">瑜伽馆</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">游泳馆</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">球馆</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">武馆</a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view">
+                    <li class="mui-pull-left ">
+                        <span>亲子</span>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">母婴店</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">亲子乐园</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">早教</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">月子中心</a>
+                    </li>
+                </ul>
+                <ul class="mui-table-view">
+                    <li class="mui-pull-left ">
+                        <span>美容美发</span>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">美发店</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">美容院</a>
+                    </li>
+                    <li class=" mui-pull-left ">
+                        <a href="# ">美甲店</a>
+                    </li>
+                    <li class="mui-pull-left ">
+                        <a href="# ">微整形</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./mui/js/mui.min.js "></script>
+        <script src="./mui/js/city.data-3.js "></script>
+        <script src="./mui/js/mui.picker.js "></script>
+        <script src="./mui/js/mui.poppicker.js "></script>
+
+        <script>
+            //类型选择
+            $('.w-classify18>ul>li>a').on('tap', function() {
+                    $(this).toggleClass('w-current18')
+                    if ($('.w-current18').length > 2) { //判断选中的是否大于两项
+                        $(this).removeClass('w-current18')
+                        mui.alert("您的选择超限！");
+                    }
+                    var currentHtml = ''
+                    $('.w-current18').each(function(i, item) {
+                        currentHtml += item.innerHTML + ' '
+                    })
+                    $('.w-value18').html(currentHtml)
+                })
+                //点击关闭按钮
+            $('.mui-icon-closeempty').on('tap', function() {
+                $('.mui-backdrop').hide();
+                $('.w-classify18').hide()
+                if ($('.mui-popup').css('display') == ('block')) {
+                    $('.mui-backdrop').show();
+                    $('.w-classify18').show()
+                };
+            })
+
+            //上传图片
+
+            var logoPic = document.querySelector('#busPic')
+            var img1 = $('.img1')
+            var logoPic = document.querySelector('#logoPic')
+            var img2 = $('.img2')
+            console.log(img2)
+            var shopPic = document.querySelector('#shopPic')
+            var img3 = $('.img3')
+
+            function getFileContent(a, b) {
+                var files = a.files;
+                for (var i = 0; i < files.length; i++) {
+                    var reader = new FileReader();
+                    reader.readAsDataURL(files[i]);
+                    reader.onload = function(e) {
+                        var imgstr = '<img  src="' + e.target.result + '"/>';
+                        b.append(imgstr);
+                        if (b.find('img').length > 3) {
+                            b.find('img:eq(3)').remove()
+                            mui.alert('一次最多只能预览三张图片!')
+                        }
+                    }
+                }
+
+            }
+            //选择省市区 
+            var city_picker = new mui.PopPicker({
+                layer: 3
+            });
+            city_picker.setData(cityData3);
+            $("#site").on("tap", function() {
+                setTimeout(function() {
+                    city_picker.show(function(items) {
+                        if ((items[0] || {}).text == undefined) {
+                            (items[0] || {}).text = "";
+                        } else if ((items[1] || {}).text == undefined) {
+                            (items[1] || {}).text = "";
+                        } else if ((items[2] || {}).text == undefined) {
+                            (items[2] || {}).text = "";
+                        }
+                        //该ID为接收城市ID字段 
+                        $("#site").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
+                    });
+                }, 200);
+            });
+        </script>
+
+
+</body>
+
+</html>

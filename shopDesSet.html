@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="js/rem.js"></script>
+    <title>店铺介绍</title>
+    <style lang="">
+        textarea {
+            margin-top: 4rem;
+            padding: 1rem 1.2rem 2rem 1.2rem;
+            height: 18rem;
+            border: 0;
+            font-size: 14px;
+            line-height: 2rem;
+            letter-spacing: 2px;
+        }
+        
+        textarea::placeholder {
+            color: #b3b3b3 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class='iconfont icon-zuojiantou'></a>
+            <span>介绍</span>
+        </header>
+        <div class='content w-content17'>
+            <textarea name="textarea" cols="30" rows="10" placeholder="请输入该店铺的文字介绍" class="markText"></textarea>
+            <span class="w-sum17">200</span>
+            <div class="w-submit17"><a href="#">完 成</a></div>
+
+        </div>
+
+
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./mui/js/mui.min.js"></script>
+    <script>
+        $(function() {
+            //输入文字不能超限
+            $(".markText").keyup(function() {
+                var text = $(this).val();
+                //中文字数统计  
+                str = (text.replace(/\w/g, "")).length;
+                //非汉字的个数  
+                abcnum = text.length - str;
+                total = str + abcnum;
+                if (total > 200) {
+                    mui.alert("您输入的字数超限！");
+                    // $(this).attr("disabled", "disabled");
+                    $(this).val(text.substring(0, 200));
+                }
+
+                $(".w-sum17").html(total + "/200");
+            })
+        })
+    </script>
+</body>
+
+</html>

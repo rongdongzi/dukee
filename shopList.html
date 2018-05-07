@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src='js/rem.js'></script>
+    <title>店铺列表</title>
+    <style lang="">
+        .mui-table-view-cell:after {
+            height: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class='iconfont icon-zuojiantou'></a>
+            <span>店铺列表</span>
+            <a herf="#" class='w-add20'>添加</a>
+        </header>
+        <div class='w-content'>
+            <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul id="container" style="height:800px;margin-top:50px">
+                        <li class="mui-table-view-cell w-item20">
+                            <div class="mui-slider-right mui-disabled">
+                                <a class="mui-btn mui-btn-red btn-delete">删除</a>
+                            </div>
+                            <div class="mui-slider-handle">
+                                <a href="openstore.html">
+                                    <span class="mui-pull-left">旗下店铺B店</span>
+                                    <span class="mui-pull-right w-yellow20">已通过<i class='iconfont icon-youjiantou w-icon-youjiantou20'></i></span>
+                                </a>
+
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell w-item20">
+                            <div class="mui-slider-right mui-disabled">
+                                <a class="mui-btn mui-btn-red btn-delete">删除</a>
+                            </div>
+                            <div class="mui-slider-handle">
+                                <a href="openthestore.html">
+                                    <span class="mui-pull-left">旗下店铺B店</span>
+                                    <span class="mui-pull-right w-red20">未通过<i class='iconfont icon-youjiantou w-icon-youjiantou20'></i></span>
+                                </a>
+
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell w-item20">
+                            <div class="mui-slider-right mui-disabled">
+                                <a class="mui-btn mui-btn-red btn-delete">删除</a>
+                            </div>
+                            <div class="mui-slider-handle">
+                                <a href="audit.html">
+                                    <span class="mui-pull-left">旗下店铺B店</span>
+                                    <span class="mui-pull-right w-blue20">审核中<i class='iconfont icon-youjiantou w-icon-youjiantou20'></i></span>
+                                </a>
+
+                            </div>
+                        </li>
+                        <li class="mui-table-view-cell w-item20">
+                            <div class="mui-slider-right mui-disabled">
+                                <a class="mui-btn mui-btn-red btn-delete">删除</a>
+                            </div>
+                            <div class="mui-slider-handle">
+                                <a href="shopInfo.html">
+                                    <span class="mui-pull-left">旗下店铺B店</span>
+                                    <span class="mui-pull-right w-grey20">待提交<i class='iconfont icon-youjiantou w-icon-youjiantou20'></i></span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js "></script>
+    <script src="./mui/js/mui.min.js "></script>
+    <script>
+        $(function() {
+
+            $('body').on('tap', 'a', function(e) {
+                e.preventDefault();
+                document.location.href = this.href;
+
+            });
+            //下拉刷新加载下页
+            mui.init({
+                pullRefresh: {
+                    container: "#refreshContainer",
+                    up: {
+                        height: 50,
+                        auto: false,
+                        callback: function() {
+                                var that = this;
+                                setTimeout(function() {
+                                    that.endPullupToRefresh();
+
+                                }, 3000)
+                            } //通过ajax从服务器获取新数据；
+
+                    }
+
+                }
+            });
+
+            //左滑动列表点击删除
+            $('.btn-delete').on('tap', function() {
+                var that = $(this)
+                mui.confirm('是否要删除此项?', '温馨提示', ['确定', '取消'], function(e) {
+                    if (e.index == 0) {
+                        that.parent().parent().hide()
+                    }
+                })
+                return false
+            })
+        })
+    </script>
+</body>
+
+</html>

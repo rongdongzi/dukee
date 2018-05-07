@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <title>发放记录</title>
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class='iconfont icon-zuojiantou'></a>
+            <span>发放记录</span>
+            <a class='w-date5'><i class="iconfont icon-rili"></i><span id="dayTime">2017.11</span></a>
+        </header>
+        <div class='w-content'>
+            <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul style="height:800px;margin-top:55px">
+                        <li class="w-item5">
+                            <p>2017-12-15 10:28</p>
+                            <p>接收人:风中的呼吸Cc</p>
+                            <strong>13 元</strong>
+                        </li>
+                        <li class="w-item5">
+                            <p>2017-12-15 10:28</p>
+                            <p>接收人:风中的呼吸Cc</p>
+                            <strong>13 元</strong>
+                        </li>
+                        <li class="w-item5">
+                            <p>2017-12-15 10:28</p>
+                            <p>接收人:风中的呼吸Cc</p>
+                            <strong>13 元</strong>
+                        </li>
+                        <li class="w-item5">
+                            <p>2017-12-15 10:28</p>
+                            <p>接收人:风中的呼吸Cc</p>
+                            <strong>13 元</strong>
+                        </li>
+                        <li class="w-item5">
+                            <p>2017-12-15 10:28</p>
+                            <p>接收人:风中的呼吸Cc</p>
+                            <strong>13 元</strong>
+                        </li>
+                        <li class="w-item5">
+                            <p>2017-12-15 10:28</p>
+                            <p>接收人:风中的呼吸Cc</p>
+                            <strong>13 元</strong>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/rem.js"></script>
+    <script src="./mui/js/mui.min.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./mui/js/mui.picker.js"></script>
+    <script src="./mui/js/mui.dtpicker.js"></script>
+    <script>
+        mui.init({
+            pullRefresh: {
+                container: "#refreshContainer",
+                up: {
+                    height: 50,
+                    auto: false,
+                    contentrefresh: "正在加载...",
+                    contentnomore: '没有更多数据了',
+                    callback: function() {
+                            var that = this;
+                            setTimeout(function() {
+                                that.endPullupToRefresh();
+                                // that.endPullupToRefresh(true);//true表示结束
+                            }, 2000)
+                        } //通过ajax从服务器获取新数据；
+                }
+            }
+        });
+        //获取当前的年月日
+        var dayTime = document.querySelector('#dayTime')
+        var timerId
+
+        function show() {
+            var date = new Date(); //日期对象
+            var now = "";
+            now = date.getFullYear() + "-";
+            var month = date.getMonth() + 1
+            month = (month < 10 ? '0' + month : month)
+            now = now + month + "-";
+            var day = date.getDate()
+            day = (day < 10 ? '0' + day : day)
+            now = now + day;
+            dayTime.innerHTML = now;
+            timerId = setTimeout("show()", 1000); //设置过1000毫秒就是1秒，调用show方法
+        }
+        show()
+
+        //日期选择
+        mui.init();
+        $('#dayTime').on('tap', function() {
+            var picker = new mui.DtPicker({
+                "type": "date",
+                "beginYear": 2010,
+                "endYear": 2020
+            });
+            picker.show(function(rs) {
+                clearTimeout(timerId)
+                dayTime.innerHTML = rs.text;
+                picker.dispose();
+
+            }, false);
+            return false
+        })
+    </script>
+</body>
+
+</html>

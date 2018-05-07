@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实名认证</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem1.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="header_notpass">
+        <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou"></a>
+        <h3>提交实名认证资料</h3>
+    </div>
+
+    <div class="input_box_realname">
+       <input type="text" placeholder="输入身份证姓名" onkeyup="value=value.replace(/[^\u4E00-\u9FA5]/g,'')">
+       <input type="text" placeholder="输入身份证号码" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')">       
+    </div>
+
+    <div class="idcard">
+        <a href="javascript:;">手持身份证正面</a>
+            <div class="id_img">
+                <input id="uploader_input" class="uploader-input" type="file" onchange="getFileContent(logoPic,img1);">
+                <span class="img_realname1"></span>
+            <div id="append">点击添加</div>
+        </div>
+    </div>
+
+    <div class="idcard1">
+        <a href="javascript:;">身份证反面</a>
+        <div class="id_img">
+            <input accept="image/*" type="file" id="shopPic" onchange="getFileContent(shopPic,img2);">
+            <span class="img_realname2"></span>
+        <div id="append1">点击添加</div>
+        </div>
+    </div>
+
+    <div class="button_realname">
+        <button type="button">完成</button>
+    </div>
+</body>
+
+<script>
+            var logoPic = document.querySelector('#uploader_input')
+            var img1 = $('.img_realname1')
+            var shopPic = document.querySelector('#shopPic')
+            var img2 = $('.img_realname2')
+    
+
+ 
+            function getFileContent(a, b) {
+                var files = a.files;
+                for (var i = 0; i < files.length; i++) {
+                    var reader = new FileReader();
+                    reader.readAsDataURL(files[i]);
+                   $("#append").hide()
+                   $("#append1").hide()
+                    reader.onload = function(e) {
+                        var imgstr = '<img  src="' + e.target.result + '"/>';
+                        b.append(imgstr);
+                        if (b.find('img').length > 1) {
+                            b.find('img:eq(1)').remove()
+                            mui.alert('一次最多只能预览三张图片!')
+                        }
+                    }
+                }
+
+            }
+    
+
+</script>
+</html>

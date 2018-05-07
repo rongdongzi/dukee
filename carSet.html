@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src='js/rem.js'></script>
+    <title>设置银行卡</title>
+    <style lang="">
+        label {
+            width: 4.5rem;
+            line-height: 4.4rem;
+            color: #323232;
+            font-size: 14px;
+        }
+        
+        input[type='text'] {
+            width: 70%;
+            border: none;
+            line-height: 4.3rem;
+            height: 4.3rem;
+            margin-bottom: 0;
+            caret-color: transparent;
+            padding: 0 1.6rem;
+            font-size: 14px;
+        }
+        
+        input::input-placeholder {
+            color: #cccccc;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class='iconfont icon-zuojiantou'></a>
+            <span>设置新银行卡</span>
+        </header>
+        <div class="w-content">
+            <form action="">
+                <div class='w-uname6'>
+                    <label>持卡人:</label>
+                    <input type="text" placeholder="某某某 ">
+                </div>
+                <div class="w-carnum6 ">
+                    <label>卡    号:</label>
+                    <input type="text" placeholder="收款方银行卡卡号 ">
+                </div>
+            </form>
+            <div class="w-selects6">
+                <div class="w-selects_head6">
+                    <a class="arrow"><i class="mui-icon mui-icon-arrowthindown"></i></a> 储蓄卡:
+                    <span class='w-selected6'></span>
+                </div>
+                <div class="w-selects_other6">
+                    <a href="javascript:" title="中国银行">
+                        <img src="./images/bank/bank1.jpg" />
+                    </a>
+                    <a href="javascript:" title="北京银行">
+                        <img src="./images/bank/bank2.jpg" />
+                    </a>
+                    <a href="javascript:" title="交通银行">
+                        <img src="./images/bank/bank3.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国农业发展银行">
+                        <img src="./images/bank/bank4.jpg" />
+                    </a>
+                    <a href="javascript:" title="上海银行">
+                        <img src="./images/bank/bank5.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国工商银联">
+                        <img src="./images/bank/bank6.jpg" />
+                    </a>
+                    <a href="javascript:" title="招商银行">
+                        <img src="./images/bank/bank7.jpg" />
+                    </a>
+                    <a href="javascript:" title="广东发展银行">
+                        <img src="./images/bank/bank8.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国光大银行">
+                        <img src="./images/bank/bank9.jpg" />
+                    </a>
+                    <a href="javascript:" title="宁波银行">
+                        <img src="./images/bank/bank10.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国银联">
+                        <img src="./images/bank/bank26.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国农业银行">
+                        <img src="./images/bank/bank11.jpg" />
+                    </a>
+                    <a href="javascript:" title="成京银行">
+                        <img src="./images/bank/bank12.jpg" />
+                    </a>
+                    <a href="javascript:" title="兴业银行">
+                        <img src="./images/bank/bank13.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国民生银联">
+                        <img src="./images/bank/bank14.jpg" />
+                    </a>
+                    <a href="javascript:" title="大连银行">
+                        <img src="./images/bank/bank15.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国建设银行">
+                        <img src="./images/bank/bank16.jpg" />
+                    </a>
+                    <a href="javascript:" title="华夏银行">
+                        <img src="./images/bank/bank17.jpg" />
+                    </a>
+                    <a href="javascript:" title="中信实业银行">
+                        <img src="./images/bank/bank18.jpg" />
+                    </a>
+                    <a href="javascript:" title="上海浦东发展银行">
+                        <img src="./images/bank/bank19.jpg" />
+                    </a>
+                    <a href="javascript:" title="浙商银行">
+                        <img src="./images/bank/bank20.jpg" />
+                    </a>
+                    <a href="javascript:" title="中国邮政">
+                        <img src="./images/bank/bank21.jpg" />
+                    </a>
+                    <a href="javascript:" title="广发银行">
+                        <img src="./images/bank/bank22.jpg" />
+                    </a>
+                    <a href="javascript:" title="深圳发展银行">
+                        <img src="./images/bank/bank23.jpg" />
+                    </a>
+                    <a href="javascript:" title="广州市商业银行">
+                        <img src="./images/bank/bank25.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="w-submit6 "><a href="withdrawals.html">下一步</a></div>
+    </div>
+
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+            //银行下来点击
+            $(".w-selects_other6").children("a").click(function() {
+                    $(this).parents('.w-selects6').find(".w-selected6").text($(this).attr("title"));
+                    $(".w-selects_other6").hide();
+                    $(this).parents('.w-selects6').find(".w-selects_head6 i").attr("class", "mui-icon mui-icon-arrowthindown");
+                })
+                //头部点击 显示或隐藏下拉，并切换箭头图片
+            $(".w-selects_head6").click(function() {
+                if ($(this).parent().children(".w-selects_other6").css("display") == 'none') {
+                    $(this).parent().children(".w-selects_other6").show();
+                    $(this).find("i").attr("class", "mui-icon mui-icon-arrowthinup");
+                } else {
+                    $(this).parent().children(".w-selects_other6").hide();
+                    $(this).find("i").attr("class", "mui-icon mui-icon-arrowthindown");
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>

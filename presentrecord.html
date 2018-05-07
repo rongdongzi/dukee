@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提现记录</title>
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/rem1.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="header_cash">
+        <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou1"></a>
+        <h3>提现记录</h3>
+    </div>
+
+    <div class="box_record" id="boxshow">
+        <ul class="showMoreNChildren" pagesize="3">
+            <li>
+                <div class="list_record">
+                <div class="list_left_record">
+                    <div class="time">
+                        <a href="javascript:;">时间：</a>
+                        <span>2017-10-10 15:33</span>
+                    </div>
+                    <div class="bank_record">
+                        <a href="javascript:;">银行：</a>
+                        <span>广发银行</span>
+                    </div>
+                    <div class="id">
+                        <a href="javascript:;">卡号：</a>
+                        <span>6217  ****  ****  9090</span>
+                    </div>
+                    <div class="state">
+                        <a href="javascript:;">状态：</a>
+                        <span>审核中</span>
+                    </div>
+                </div>
+                <div class="list_right">
+                    <a href="javascript:;">2035.00</a><span>元</span>
+                </div>
+            </div>
+        </li>
+            <li>
+                <div class="list_record">
+                    <div class="list_left_record">
+                        <div class="time">
+                            <a href="javascript:;">时间：</a>
+                            <span>2017-10-10 15:33</span>
+                        </div>
+                        <div class="bank_record">
+                            <a href="javascript:;">银行：</a>
+                            <span>广发银行</span>
+                        </div>
+                        <div class="id">
+                            <a href="javascript:;">卡号：</a>
+                            <span>6217  ****  ****  9090</span>
+                        </div>
+                        <div class="state1">
+                            <a href="javascript:;">状态：</a>
+                            <span>失败</span>
+                        </div>
+                    </div>
+                    <div class="list_right">
+                        <a href="javascript:;">2035.00</a><span>元</span>
+                    </div>
+            </div>
+            </li>
+            <li>
+                <div class="list_record">
+                    <div class="list_left_record">
+                        <div class="time">
+                            <a href="javascript:;">时间：</a>
+                            <span>2017-10-10 15:33</span>
+                        </div>
+                        <div class="bank_record">
+                            <a href="javascript:;">银行：</a>
+                            <span>广发银行</span>
+                        </div>
+                        <div class="id">
+                            <a href="javascript:;">卡号：</a>
+                            <span>6217  ****  ****  9090</span>
+                        </div>
+                        <div class="state2">
+                            <a href="javascript:;">状态：</a>
+                            <span>成功</span>
+                        </div>
+                    </div>
+                    <div class="list_right">
+                        <a href="javascript:;">2035.00</a><span>元</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                    <div class="list_record">
+                        <div class="list_left_record">
+                            <div class="time">
+                                <a href="javascript:;">时间：</a>
+                                <span>2017-10-10 15:33</span>
+                            </div>
+                            <div class="bank_record">
+                                <a href="javascript:;">银行：</a>
+                                <span>广发银行</span>
+                            </div>
+                            <div class="id">
+                                <a href="javascript:;">卡号：</a>
+                                <span>6217  ****  ****  9090</span>
+                            </div>
+                            <div class="state1">
+                                <a href="javascript:;">状态：</a>
+                                <span>失败</span>
+                            </div>
+                        </div>
+                        <div class="list_right">
+                            <a href="javascript:;">2035.00</a><span>元</span>
+                        </div>
+                </div>
+                </li>
+                <li>
+                        <div class="list_record">
+                            <div class="list_left_record">
+                                <div class="time">
+                                    <a href="javascript:;">时间：</a>
+                                    <span>2017-10-10 15:33</span>
+                                </div>
+                                <div class="bank_record">
+                                    <a href="javascript:;">银行：</a>
+                                    <span>广发银行</span>
+                                </div>
+                                <div class="id">
+                                    <a href="javascript:;">卡号：</a>
+                                    <span>6217  ****  ****  9090</span>
+                                </div>
+                                <div class="state1">
+                                    <a href="javascript:;">状态：</a>
+                                    <span>失败</span>
+                                </div>
+                            </div>
+                            <div class="list_right">
+                                <a href="javascript:;">2035.00</a><span>元</span>
+                            </div>
+                    </div>
+                    </li>
+        </ul>
+    </div>
+    
+</body>
+<script src="./mui/js/mui.min.js "></script>
+<script>  
+    mui.init({
+            pullRefresh: {
+                container: "#boxshow",
+                up: {
+                    height: 30,
+                    auto: false,
+                    contentrefresh: "正在加载...",
+                    contentnomore: '没有更多数据了',
+                    callback: function() {
+                            var that = this;
+                            setTimeout(function() {
+                                that.endPullupToRefresh();
+                                // that.endPullupToRefresh(true);//true表示结束
+                            }, 2000)
+                        } //通过ajax从服务器获取新数据；
+                }
+            }
+        });
+</script>
+</html>

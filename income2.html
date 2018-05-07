@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common.css">
+    <title>收入明细</title>
+</head>
+
+<body>
+    <div class="w-layout">
+        <header class="w-header">
+            <a href="javascript:history.back(-1)" class='iconfont icon-zuojiantou'></a>
+            <span>旗下店铺A店</span>
+            <a class='w-date10'><i class="iconfont icon-rili"></i><span id='dayTime'>2017.11</span></a>
+        </header>
+        <div class='w-content' style="height:13rem;">
+            <div class='w-summoney10'>
+                <ul>
+                    <li>
+                        <span>111222 元</span>
+                        <p>营业总额</p>
+                    </li>
+                    <li>
+                        <span>334 元</span>
+                        <p>待结算</p>
+                    </li>
+                    <li>
+                        <span>110004 元</span>
+                        <p>实收款</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-buyinfo10">
+                <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul id="container" style="height:800px;margin-top:12rem">
+                            <li>
+                                <p>2017-10.10 15.33</p>
+                                <p>原价:<span>7.5</span>元</p>
+                                <p>用户ID:gougouliang</p>
+                                <strong>7.5元</strong>
+                                <i class="w-blue10">支</i>
+                            </li>
+                            <li>
+                                <p>2017-10.10 15.33</p>
+                                <p>原价:<span>7.5</span>元</p>
+                                <p>用户ID:gougouliang</p>
+                                <strong>7.5元</strong>
+                                <i class="w-green10">微</i>
+                            </li>
+                            <li>
+                                <p>2017-10.10 15.33</p>
+                                <p>原价:<span>7.5</span>元　　红包:<span>8.8</span>元
+
+                                </p>
+                                <p>用户ID:gougouliang</p>
+                                <strong>7.5元</strong>
+                                <i class="w-yellow10">金</i>
+                            </li>
+                            <li>
+                                <p>2017-10.10 15.33</p>
+                                <p>原价:<span>7.5</span>元</p>
+                                <p>用户ID:gougouliang</p>
+                                <strong>7.5元</strong>
+                            </li>
+                            <li>
+                                <p>2017-10.10 15.33</p>
+                                <p>原价:<span>7.5</span>元</p>
+                                <p>用户ID:gougouliang</p>
+                                <strong>7.5元</strong>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/rem.js"></script>
+        <script src="./mui/js/mui.min.js"></script>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./mui/js/mui.picker.js"></script>
+        <script src="./mui/js/mui.dtpicker.js"></script>
+
+        <script>
+            //下拉刷新加载下页
+            mui.init({
+                pullRefresh: {
+                    container: "#refreshContainer",
+                    up: {
+                        height: 50,
+                        auto: false,
+                        contentrefresh: "正在加载...",
+                        contentnomore: '没有更多数据了',
+                        callback: function() {
+                                var that = this;
+                                setTimeout(function() {
+                                    that.endPullupToRefresh();
+
+                                }, 3000)
+                            } //通过ajax从服务器获取新数据；
+
+                    }
+
+                }
+            });
+            //获取当前的年月日
+            var dayTime = document.querySelector('#dayTime')
+            var timerId
+
+            function show() {
+                var date = new Date(); //日期对象
+                var now = "";
+                now = date.getFullYear() + "-";
+                var month = date.getMonth() + 1
+                month = (month < 10 ? '0' + month : month)
+                now = now + month + "-";
+                var day = date.getDate()
+                day = (day < 10 ? '0' + day : day)
+                now = now + day;
+                dayTime.innerHTML = now;
+                timerId = setTimeout("show()", 1000); //设置过1000毫秒就是1秒，调用show方法
+            }
+            show()
+
+            //日期选择
+            mui.init();
+            $('#dayTime').on('tap', function() {
+                var picker = new mui.DtPicker({
+                    "type": "date",
+                    "beginYear": 2010,
+                    "endYear": 2020
+                });
+                picker.show(function(rs) {
+                    clearTimeout(timerId)
+                    dayTime.innerHTML = rs.text;
+                    picker.dispose();
+
+                }, false);
+                return false
+            })
+        </script>
+
+    </div>
+
+</body>
+
+</html>
