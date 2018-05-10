@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>提现金额</title>
     <link rel="stylesheet" href="css/common.css">
     <script src="mui/js/mui.js"></script>
     <script src="js/rem1.js"></script>
+    <script src="icon-font/iconfont.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>
+
 <body>
 
     <div class="header_cash">
         <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou1"></a>
         <a class="a1_cash">提现金额</a>
-        <span class="a_cash1"><a href="presentrecord.html">记录</a></span>
+        <span class="a_cash1">
+            <a href="presentrecord.html">记录</a>
+        </span>
     </div>
 
     <div class="bank">
         <div class="li_left">
-            <img src="img/gf.png" alt="">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-zhaoshangyinhang2"></use>
+            </svg>
         </div>
         <div class="li_right">
-            <span>广发银行</span>&nbsp;<span>储蓄卡</span>
-            <a href="javascript:;">6127  ****  ****  2629</a>
+            <span>广发银行</span>&nbsp;
+            <span>储蓄卡</span>
+            <span class="span_num">6127 **** **** 2629</span>
         </div>
     </div>
 
@@ -51,7 +59,8 @@
         </div>
         <div class="money_txt">
             <h3>提现</h3>
-            <span class="input3">¥</span><span id="input2">5000.00</span>
+            <span class="input3">¥</span>
+            <span id="input2">5000.00</span>
         </div>
         <input type="tel" maxlength="6" class="pwd-input" id="pwd-input">
         <div class="fake-box">
@@ -66,81 +75,83 @@
             </div>
         </div>
     </div>
- 
+
 
 </body>
 
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         //全部提取
         var timer;
         clearTimeout(timer)
-        $("#span1").click(function(){
-            let a=$('.money1').html();
+        $("#span1").click(function () {
+            let a = $('.money1').html();
             console.log(a)
             $("#input1").val(a)
         });
-        
+
 
         //当输入框有焦点时。弹窗隐藏
-        $("#input1").focus(function(){
+        $("#input1").focus(function () {
             $(".pwd-box").hide()
         })
 
         // 点击提现按钮弹出输入密码框
-        $('#btn_sbmit').click(function(){
-            let a=$('.money1').html();
-            let b=$("#input1").val();
+        $('#btn_sbmit').click(function () {
+            let a = $('.money1').html();
+            let b = $("#input1").val();
 
             // 判断输入框内是否有金额是否大于可体现金额
-            if (b.replace(/(^\s*)|(\s*$)/g, "")=="" || parseFloat(b)>parseFloat(a)){
+            if (b.replace(/(^\s*)|(\s*$)/g, "") == "" || parseFloat(b) > parseFloat(a)) {
                 mui.alert("请输入正确的提取金额")
                 $(".pwd-box").hide()
-            }else{
-                $(".input_txt_a").click(function(){
+            } else {
+                $(".input_txt_a").click(function () {
                     $(".pwd-box").hide()
                 })
                 $(".pwd-box").show()
                 // $input.val("")
                 $("#input2").html(b)
             }
-        
+
         });
 
 
         // 判断输入密码
         var $input = $(".fake-box input");
-			$("#pwd-input").on("input", function() {
-                // clearTimeout(timer)
-				var pwd = $(this).val().trim();
-				for (var i = 0, len = pwd.length; i < len; i++) {
-					$input.eq("" + i + "").val(pwd[i]);
-				}
-				$input.each(function() {
-					var index = $(this).index();
-					if (index >= len) {
-						$(this).val("");
-                        // $input.focus();
-					}
-				});
-                console.log(len)
-                //当输入完密码之后，弹出框在3s消失
-				if (len == 6) {
-					//执行其他操作
-                    // $input.val("")
-                    
-                    console.log("输入完成")
-                   timer=setTimeout(function(){
-                        $(".pwd-box").hide()
-                        $input.val("")  
-                        $("#pwd-input").val("")
-                   },3000)
-                
-				}else{
-                    $(".pwd-box").show() 
+        $("#pwd-input").on("input", function () {
+            // clearTimeout(timer)
+            var pwd = $(this).val().trim();
+            for (var i = 0, len = pwd.length; i < len; i++) {
+                $input.eq("" + i + "").val(pwd[i]);
+            }
+            $input.each(function () {
+                var index = $(this).index();
+                if (index >= len) {
+                    $(this).val("");
+                    // $input.focus();
                 }
-			});
-});
+            });
+            console.log(len)
+            //当输入完密码之后，弹出框在3s消失
+            if (len == 6) {
+                //执行其他操作
+                // $input.val("")
+
+                console.log("输入完成")
+                timer = setTimeout(function () {
+                    $(".pwd-box").hide()
+                    $input.val("")
+                    $("#pwd-input").val("")
+                    window.location.href = "cashsuccess.html";
+                }, 3000)
+
+            } else {
+                $(".pwd-box").show()
+            }
+        });
+    });
 </script>
+
 </html>

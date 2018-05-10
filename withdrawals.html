@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -7,54 +8,403 @@
     <title>提现</title>
     <link rel="stylesheet" href="css/common.css">
     <script src="js/rem1.js"></script>
+    <script src="icon-font/iconfont.js"></script>
+    <style type="text/css">
+        .icon {
+            /* 通过设置 font-size 来改变图标大小 */
+            width: 4em;
+            height: 4em;
+            /* 图标和文字相邻时，垂直对齐 */
+            vertical-align: top;
+            /* 通过设置 color 来改变 SVG 的颜色/fill */
+            fill: currentColor;
+            /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+             normalize.css 中也包含这行 */
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
     <div class="header_cash">
-            <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou1"></a>
-            <a>提现金额</a>
-            <span class="a_cash1"><a href="presentrecord.html">记录</a></span>
+        <a href="javascript:history.back(-1)" class="iconfont icon-zuojiantou1"></a>
+        <a>提现金额</a>
+        <span class="a_cash1">
+            <a href="presentrecord.html">记录</a>
+        </span>
     </div>
 
     <div class="list_withdrawals">
-            <a href="javascript:;">可提现金额</a>
-            <span>5637.08<a>元</a></span>
+        <a href="javascript:;">可提现金额</a>
+        <span>5637.08
+            <a>元</a>
+        </span>
     </div>
 
     <div class="bank_withdrawals">
-            <ul>
-                <li>
+        <ul>
+            <li>
+                <a href="amount.html">
                     <div class="li_left">
-                        <img src="img/gf.png" alt="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhaoshangyinhang2"></use>
+                        </svg>
                     </div>
                     <div class="li_right">
-                        <span>广发银行</span>&nbsp;<span>储蓄卡</span>
-                        <a href="javascript:;">6127  ****  ****  2629</a>
+                        <span>招商银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
                     </div>
-                </li>
-                <li>
+                </a>
+            </li>
+
+            <li>
+                <a href="amount.html">
                     <div class="li_left">
-                        <img src="img/jh.png" alt="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-jiansheyinhang"></use>
+                        </svg>
                     </div>
                     <div class="li_right">
-                        <span>建设银行</span>&nbsp;<span>储蓄卡</span>
-                        <a href="javascript:;">6127  ****  ****  2629</a>
+                        <span>建设银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
                     </div>
-                </li>
-                <li>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
                     <div class="li_left">
-                        <img src="img/sh.png" alt="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang-yinlian-"></use>
+                        </svg>
                     </div>
                     <div class="li_right">
-                        <span>招商银行</span>&nbsp;<span>储蓄卡</span>
-                        <a href="javascript:;">6127  ****  ****  2629</a>
+                        <span>银联</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
                     </div>
-                </li>
-            </ul>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-nongyeyinhang-"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>农业银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zheshangyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>浙商银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhongguoguangdayinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中国光大银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhongguominshengyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中国民生</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhongguoyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中国银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhongguoyouzheng"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中国邮政</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhongguogongshangyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中国工商银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shengjingyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>盛京银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shenzhenfazhanyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>深圳发展银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-guangzhoushangyeyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>广州商业银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-guangfayinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>广发银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-dalianyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>大连银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-huaxiayinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>华夏银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-beijingyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>北京银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-guangdayinhang"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>光大银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-jiaotongyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>交通银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xingyeyinhang1"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>兴业银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang-ningboyinhang-"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>宁波银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang-zhongguonongyefazhanyinhang-"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中国农业发展银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang-shanghaiyinhang-"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>上海银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang-zhongxinshiye-"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>中信银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="amount.html">
+                    <div class="li_left">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang-shanghaipudongfazhan-"></use>
+                        </svg>
+                    </div>
+                    <div class="li_right">
+                        <span>上海浦东银行</span>&nbsp;
+                        <span>储蓄卡</span>
+                        <span class="span_num">6127 **** **** 2629</span>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
     </div>
 
 
     <div class="button_withdrawals">
-            <button type="button" class="mui-btn mui-btn-danger"><a href="">使用新银行卡</a></button>
+        <button type="button" class="mui-btn mui-btn-danger">
+            <a href="carSet.html">使用新银行卡</a>
+        </button>
     </div>
 </body>
+
 </html>
